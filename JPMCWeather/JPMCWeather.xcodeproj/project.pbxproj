@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		699956C21E63D01400467302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699956C11E63D01400467302 /* AppDelegate.swift */; };
-		699956C41E63D01400467302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699956C31E63D01400467302 /* ViewController.swift */; };
-		699956C71E63D01400467302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699956C51E63D01400467302 /* Main.storyboard */; };
 		699956C91E63D01400467302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699956C81E63D01400467302 /* Assets.xcassets */; };
 		699956CC1E63D01400467302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699956CA1E63D01400467302 /* LaunchScreen.storyboard */; };
 		699956D71E63D01400467302 /* JPMCWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699956D61E63D01400467302 /* JPMCWeatherTests.swift */; };
@@ -36,8 +34,6 @@
 /* Begin PBXFileReference section */
 		699956BE1E63D01400467302 /* JPMCWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JPMCWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699956C11E63D01400467302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		699956C31E63D01400467302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		699956C61E63D01400467302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		699956C81E63D01400467302 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		699956CB1E63D01400467302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		699956CD1E63D01400467302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,9 +93,11 @@
 		699956C01E63D01400467302 /* JPMCWeather */ = {
 			isa = PBXGroup;
 			children = (
+				699956F51E63D11800467302 /* Common */,
+				699956F11E63D07E00467302 /* ViewModel */,
+				699956F01E63D07A00467302 /* View */,
+				699956EF1E63D07100467302 /* Model */,
 				699956C11E63D01400467302 /* AppDelegate.swift */,
-				699956C31E63D01400467302 /* ViewController.swift */,
-				699956C51E63D01400467302 /* Main.storyboard */,
 				699956C81E63D01400467302 /* Assets.xcassets */,
 				699956CA1E63D01400467302 /* LaunchScreen.storyboard */,
 				699956CD1E63D01400467302 /* Info.plist */,
@@ -123,6 +121,58 @@
 				699956E31E63D01400467302 /* Info.plist */,
 			);
 			path = JPMCWeatherUITests;
+			sourceTree = "<group>";
+		};
+		699956EF1E63D07100467302 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				699956F41E63D0D300467302 /* Domain Objects */,
+				699956F31E63D0CB00467302 /* Services Impl */,
+				699956F21E63D0B600467302 /* Services Interface */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		699956F01E63D07A00467302 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		699956F11E63D07E00467302 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		699956F21E63D0B600467302 /* Services Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Services Interface";
+			sourceTree = "<group>";
+		};
+		699956F31E63D0CB00467302 /* Services Impl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Services Impl";
+			sourceTree = "<group>";
+		};
+		699956F41E63D0D300467302 /* Domain Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Domain Objects";
+			sourceTree = "<group>";
+		};
+		699956F51E63D11800467302 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +284,6 @@
 			files = (
 				699956CC1E63D01400467302 /* LaunchScreen.storyboard in Resources */,
 				699956C91E63D01400467302 /* Assets.xcassets in Resources */,
-				699956C71E63D01400467302 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699956C41E63D01400467302 /* ViewController.swift in Sources */,
 				699956C21E63D01400467302 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +344,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		699956C51E63D01400467302 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				699956C61E63D01400467302 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		699956CA1E63D01400467302 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
