@@ -6,6 +6,10 @@
 //  Copyright © 2017 JPMC. All rights reserved.
 //
 
+/*
+ Concrete implementation of WeatherParserProtocol for JSON based format
+ */
+
 import Foundation
 
 class WeatherParserJSON: WeatherParserProtocol {

@@ -6,6 +6,10 @@
 //  Copyright © 2017 JPMC. All rights reserved.
 //
 
+/*
+ Concrete implementation of WeatherDataManagerProtocol for Archive/Un-Archive based storage
+ */
+
 import Foundation
 
 class WeatherDataManager : WeatherDataManagerProtocol{

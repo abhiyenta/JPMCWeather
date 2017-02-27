@@ -22,6 +22,10 @@
 		699957051E63D78100467302 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699957011E63D78100467302 /* WeatherService.swift */; };
 		699957071E63D7D200467302 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699957061E63D7D200467302 /* Constants.swift */; };
 		699957091E63E17100467302 /* String+ToJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699957081E63E17100467302 /* String+ToJSONObject.swift */; };
+		6999570B1E63E20A00467302 /* ObjectGraphConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6999570A1E63E20A00467302 /* ObjectGraphConfigurator.swift */; };
+		6999570D1E63E22E00467302 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6999570C1E63E22E00467302 /* WeatherViewController.swift */; };
+		6999570F1E63E24000467302 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6999570E1E63E24000467302 /* ImageDownloader.swift */; };
+		699957111E63E29B00467302 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 699957101E63E29B00467302 /* WeatherViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		699957011E63D78100467302 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		699957061E63D7D200467302 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		699957081E63E17100467302 /* String+ToJSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToJSONObject.swift"; sourceTree = "<group>"; };
+		6999570A1E63E20A00467302 /* ObjectGraphConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectGraphConfigurator.swift; sourceTree = "<group>"; };
+		6999570C1E63E22E00467302 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		6999570E1E63E24000467302 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		699957101E63E29B00467302 /* WeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +164,8 @@
 		699956F01E63D07A00467302 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6999570C1E63E22E00467302 /* WeatherViewController.swift */,
+				699957101E63E29B00467302 /* WeatherViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +211,8 @@
 			children = (
 				699957061E63D7D200467302 /* Constants.swift */,
 				699957081E63E17100467302 /* String+ToJSONObject.swift */,
+				6999570A1E63E20A00467302 /* ObjectGraphConfigurator.swift */,
+				6999570E1E63E24000467302 /* ImageDownloader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -313,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				699956CC1E63D01400467302 /* LaunchScreen.storyboard in Resources */,
+				699957111E63E29B00467302 /* WeatherViewController.xib in Resources */,
 				699956C91E63D01400467302 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,9 +351,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6999570B1E63E20A00467302 /* ObjectGraphConfigurator.swift in Sources */,
 				699956F91E63D36900467302 /* WeatherAPIClientProtocol.swift in Sources */,
+				6999570F1E63E24000467302 /* ImageDownloader.swift in Sources */,
 				699957051E63D78100467302 /* WeatherService.swift in Sources */,
 				699957041E63D78100467302 /* WeatherParserJSON.swift in Sources */,
+				6999570D1E63E22E00467302 /* WeatherViewController.swift in Sources */,
 				699957031E63D78100467302 /* WeatherDataManager.swift in Sources */,
 				699956FB1E63D36900467302 /* WeatherParserProtocol.swift in Sources */,
 				699957071E63D7D200467302 /* Constants.swift in Sources */,

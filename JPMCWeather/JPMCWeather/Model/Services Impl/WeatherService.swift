@@ -1,11 +1,16 @@
 //
 //  WeatherService.swift
-//  JPWeather
+//  JPMCWeather
 //
-//  Created by MOSO33 on 2/25/17.
+//  Created by MOSO33 on 2/26/17.
 //  Copyright © 2017 JPMC. All rights reserved.
 //
 
+/*
+ A fasade providing access to the Weather service.
+ Client code should only refer this interface from their code.
+*/
+ 
 import Foundation
 
 enum WeatheServiceResultType<T, E> {

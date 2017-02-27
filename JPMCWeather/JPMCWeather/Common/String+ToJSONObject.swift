@@ -6,6 +6,10 @@
 //  Copyright © 2017 JPMC. All rights reserved.
 //
 
+/*
+Extension for converting JSON string to in-memory objects(Dicts/arrays)
+ */
+
 import Foundation
 
 extension String {

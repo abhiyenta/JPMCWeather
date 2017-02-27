@@ -7,8 +7,8 @@
 //
 
 /*
- This class encapsulates Weather model. Using Arhive/unarhive persistent however same could be MangedObject for CoreData based persistent
- We could define translation/validation logic here
+ This class encapsulates Weather model. Currently its using Arhive/unarhive for persistent however same could be MangedObject for CoreData based persistent/storage
+ We could also define translation/validation logic here
 */
 
 

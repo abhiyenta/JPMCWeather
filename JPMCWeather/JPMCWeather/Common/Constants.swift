@@ -10,7 +10,6 @@
  Declare application specific constants
  */
 
-
 import Foundation
 
 struct Constants {

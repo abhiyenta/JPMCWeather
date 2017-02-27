@@ -9,7 +9,7 @@
 /*
  WeatherParserProtocol defines parsing contract for clients. A Interface which declares the methods related to mapping the xml/json/..etc basic types to Weather model object .
  
- Classes can confirm to this protocol and provide various concrete implemenrations i.e. (json -> weather, xml -> weather).
+ Classes can confirm to this protocol and provide various concrete implemenrations i.e. (json -> weather, xml -> weather...etc).
  */
 
 

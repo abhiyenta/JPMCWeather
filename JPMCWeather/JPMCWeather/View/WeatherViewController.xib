@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherViewController" customModule="JPMCWeather" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="9kq-BC-ukb" id="6US-wZ-mzI"/>
+                <outlet property="cityLabel" destination="6DZ-nB-FbM" id="7uQ-VQ-6dI"/>
+                <outlet property="descriptionLabel" destination="f8M-3A-Rf6" id="UCe-sX-hgb"/>
+                <outlet property="iconImageView" destination="emo-yt-ycD" id="04O-l3-XAf"/>
+                <outlet property="searchBar" destination="ShV-tu-5zh" id="mQi-ao-E9u"/>
+                <outlet property="temeratureLabel" destination="Eth-wj-E9Y" id="hpC-yX-bV7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Mcy-5q-G7o"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="emo-yt-ycD">
+                    <rect key="frame" x="137.5" y="180" width="100" height="100"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DZ-nB-FbM">
+                    <rect key="frame" x="187.5" y="100" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8M-3A-Rf6">
+                    <rect key="frame" x="187.5" y="310" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eth-wj-E9Y">
+                    <rect key="frame" x="187.5" y="150" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <searchBar contentMode="redraw" placeholder="Search current weather" translatesAutoresizingMaskIntoConstraints="NO" id="ShV-tu-5zh">
+                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="OjV-Nh-0Os"/>
+                    </connections>
+                </searchBar>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9kq-BC-ukb">
+                    <rect key="frame" x="325" y="33" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ShV-tu-5zh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9as-pj-iG4"/>
+                <constraint firstItem="Eth-wj-E9Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Fc2-gD-zpH"/>
+                <constraint firstItem="f8M-3A-Rf6" firstAttribute="top" secondItem="emo-yt-ycD" secondAttribute="bottom" constant="30" id="PvX-NF-wVU"/>
+                <constraint firstItem="Eth-wj-E9Y" firstAttribute="top" secondItem="6DZ-nB-FbM" secondAttribute="bottom" constant="50" id="V4D-Na-W0M"/>
+                <constraint firstItem="ShV-tu-5zh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Y2k-ah-12Q"/>
+                <constraint firstItem="9kq-BC-ukb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="YPT-MA-BfF"/>
+                <constraint firstItem="f8M-3A-Rf6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZVp-Ht-Z7a"/>
+                <constraint firstItem="emo-yt-ycD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZbQ-Gb-3b9"/>
+                <constraint firstAttribute="trailing" secondItem="ShV-tu-5zh" secondAttribute="trailing" id="cFG-Jf-fCo"/>
+                <constraint firstItem="6DZ-nB-FbM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="cdX-Mc-E1O"/>
+                <constraint firstItem="6DZ-nB-FbM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eWM-DB-c3q"/>
+                <constraint firstAttribute="trailing" secondItem="9kq-BC-ukb" secondAttribute="trailing" constant="30" id="hFf-mM-Yef"/>
+                <constraint firstItem="emo-yt-ycD" firstAttribute="top" secondItem="Eth-wj-E9Y" secondAttribute="bottom" constant="30" id="qPs-1F-sEy"/>
+            </constraints>
+            <point key="canvasLocation" x="35.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

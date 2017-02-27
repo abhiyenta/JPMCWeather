@@ -6,6 +6,10 @@
 //  Copyright © 2017 JPMC. All rights reserved.
 //
 
+/*
+ Concrete implementation of WeatherAPIClientProtocol for REST based web services
+ */
+
 import Foundation
 
 class WeatherAPIClientRest: WeatherAPIClientProtocol {
