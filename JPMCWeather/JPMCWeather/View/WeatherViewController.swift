@@ -75,10 +75,15 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
         DispatchQueue.main.async {
             self.descriptionLabel.text = weather.desc
             self.cityLabel.text = weather.city
-            self.temeratureLabel.text = "\(weather.currentTemp)  Kelvin" //we can user MVVM to put translation code for Kelvin fahrenheit, degree vs celsius and other temp units
+            self.temeratureLabel.text = "\(self.convertKelvinToFahrenheit(kelvinTemp: weather.currentTemp))˚F" //we can user MVVM to move this translation code for Kelvin fahrenheit, degree vs celsius and other temp units
             self.iconImageView.getImageFromURL(urlString: "\(Constants.WeatherApi.iconBaseURL)" + "\(weather.icon).png")
             self.hideActivityIndicator()
         }
+    }
+    
+    //this is hardcoded translation logic which can move into viewmodel(MVVM)
+    func convertKelvinToFahrenheit(kelvinTemp: Float) -> Float{
+        return (kelvinTemp * 9/5) - 459.67
     }
     
     func showActivityIndicator(){
