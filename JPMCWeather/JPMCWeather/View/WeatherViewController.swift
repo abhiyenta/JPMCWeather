@@ -15,6 +15,7 @@ import UIKit
 
 class WeatherViewController: UIViewController, UISearchBarDelegate {
     
+    //UI elements
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -22,13 +23,12 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    //weather service for all weather related information
     var weatherService:WeatherService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        activityIndicator.isHidden  = true
         activityIndicator.hidesWhenStopped = true;
         loadLastSearchedWeather()
     }
@@ -41,10 +41,10 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
     //# MARK: - Search Bar Methods
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchTerm = searchBar.text{
-            activityIndicator.isHidden  = false
-            activityIndicator.startAnimating()
+            showActivityIndicator()
             fetchWeather(searchTerm: searchTerm)
         }
+        searchBar.text = ""
         searchBar.resignFirstResponder()
     }
     
@@ -59,6 +59,7 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
         case let .success(weather):
             self.relaodWeatherData(weather: weather)
         case let .failure(error):
+            self.hideActivityIndicator()
             print(error) //inform user about error. Could use alertcontroller or something else
         }
     }
@@ -76,8 +77,17 @@ class WeatherViewController: UIViewController, UISearchBarDelegate {
             self.cityLabel.text = weather.city
             self.temeratureLabel.text = "\(weather.currentTemp)  Kelvin" //we can user MVVM to put translation code for Kelvin fahrenheit, degree vs celsius and other temp units
             self.iconImageView.getImageFromURL(urlString: "\(Constants.WeatherApi.iconBaseURL)" + "\(weather.icon).png")
-            self.activityIndicator.isHidden  = true
-            self.activityIndicator.stopAnimating()
+            self.hideActivityIndicator()
         }
+    }
+    
+    func showActivityIndicator(){
+        activityIndicator.isHidden  = false
+        activityIndicator.startAnimating()
+    }
+    
+    func hideActivityIndicator(){
+        self.activityIndicator.isHidden  = true
+        self.activityIndicator.stopAnimating()
     }
 }
