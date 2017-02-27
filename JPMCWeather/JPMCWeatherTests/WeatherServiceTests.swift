@@ -36,7 +36,8 @@ class WeatherServiceTests: XCTestCase {
         let dbManager = WeatherDataManager()
         
         let SUT = WeatherService(parser: weatherParser, apiClient: weatherAPIClient, dbManager:dbManager)
-        
+        let weatherFetchExpectation = expectation(description: "AsyncWeatherFetch")
+
         //when/ excecute
         SUT.fetchWeather(city: "Plano", complitionHandler: { (WeatheServiceFetchResult) in
             switch WeatheServiceFetchResult {
@@ -44,9 +45,15 @@ class WeatherServiceTests: XCTestCase {
                 //then //assert
                 XCTAssertNotNil(weather, "Weather data not received")
             case let .failure(error):
-                XCTAssert(true, "Fetch Error occured")
+                XCTAssertNil(error, "Fetch Error occured")
+
             }
+            weatherFetchExpectation.fulfill()
         })
+        
+        self.waitForExpectations(timeout: 10) { error in
+            XCTAssertNil(error, "Error occured")
+        }
         
     }
     
@@ -59,7 +66,8 @@ class WeatherServiceTests: XCTestCase {
         let dbManager = WeatherDataManager()
         
         let SUT = WeatherService(parser: weatherParser, apiClient: weatherAPIClient, dbManager:dbManager)
-        
+        let weatherFetchExpectation = expectation(description: "AsyncWeatherFetch")
+
         //when/ excecute
         SUT.fetchWeather(city: "Plano", complitionHandler: { (WeatheServiceFetchResult) in
             switch WeatheServiceFetchResult {
@@ -70,10 +78,14 @@ class WeatherServiceTests: XCTestCase {
                 XCTAssertNotNil(weather.currentTemp, "Temperature not found ")
                 XCTAssertNotNil(weather.type, "type not found")
             case let .failure(error):
-                XCTAssert(true, "Fetch Error occured")
+                XCTAssertNil(error, "Fetch Error occured")
             }
+            weatherFetchExpectation.fulfill()
         })
         
+        self.waitForExpectations(timeout: 10) { error in
+            XCTAssertNil(error, "Error occured")
+        }
     }
     
     func testPerformanceExample() {
