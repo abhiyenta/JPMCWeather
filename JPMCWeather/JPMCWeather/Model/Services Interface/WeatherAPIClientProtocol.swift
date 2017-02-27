@@ -40,6 +40,6 @@ protocol WeatherAPIClientProtocol {
      - Parameter complitionHandler: called upon getting response from service
      - Returns: nothing.
      */
-    func fetchWeather(_: String, complitionHandler: @escaping WeatherAPIComplitionHandler)
+    func fetchWeather(searhTerm: String, complitionHandler: @escaping WeatherAPIComplitionHandler)
 }
 

@@ -19,7 +19,8 @@ enum WeatherDBError:Error{
     case couldNotOpenDB
     case currptedDB
     case accessDenied
-    case noLastSearchedWeather
+    case noSavedSearch
+    case serializationFailed
 }
 
 enum WeatherDBResultType<T,E>{
@@ -31,8 +32,14 @@ typealias WeatherDBResult = WeatherDBResultType<Weather,WeatherDBError>
 
 protocol WeatherDataManagerProtocol {
     /**
-      Gives last city searched by the user from DB.
+      Gives last searched weather by the user from DB.
      - Returns: Weather object for last searched city.
      */
-    var lastSearchedWeather: Weather { get set }      //read-write
+    func lastSearchedWeather() -> WeatherDBResult
+    
+    /**
+     Sets last searched weather to DB.
+     */
+    func setLastSearchedWeather(weather: Weather)
+
 }

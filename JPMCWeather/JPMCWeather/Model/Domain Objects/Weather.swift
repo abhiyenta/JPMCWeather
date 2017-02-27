@@ -7,7 +7,8 @@
 //
 
 /*
- This class encapsulates Weather model. We could define translation/validation logic here
+ This class encapsulates Weather model. Using Arhive/unarhive persistent however same could be MangedObject for CoreData based persistent
+ We could define translation/validation logic here
 */
 
 
@@ -15,7 +16,7 @@ import Foundation
 import CoreData
 
 
-public struct Weather {
+public class Weather: NSObject,  NSCoding {
     
     let currentTemp: Float
     let icon: String
@@ -29,5 +30,21 @@ public struct Weather {
         self.desc = desc
         self.type = type
         self.city = city
+    }
+    
+    public required init(coder decoder: NSCoder) {
+        self.currentTemp = decoder.decodeFloat(forKey: "currentTemp")
+        self.icon = decoder.decodeObject(forKey: "icon") as? String ?? ""
+        self.desc = decoder.decodeObject(forKey: "desc") as? String ?? ""
+        self.type = decoder.decodeObject(forKey: "type") as? String ?? ""
+        self.city = decoder.decodeObject(forKey: "city") as? String ?? ""
+    }
+    
+    public func encode(with coder: NSCoder) {
+        coder.encode(currentTemp, forKey: "currentTemp")
+        coder.encode(icon, forKey: "icon")
+        coder.encode(desc, forKey: "desc")
+        coder.encode(type, forKey: "type")
+        coder.encode(city, forKey: "city")
     }
 }
